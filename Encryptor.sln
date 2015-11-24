@@ -1,0 +1,58 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 14
+VisualStudioVersion = 14.0.23107.0
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Encryptor.Engine", "Encryptor\Encryptor.Engine.csproj", "{C4E592D9-64B3-4182-946E-A76A6EDCA0F1}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Encryptor.Test", "Encryptor.Test\Encryptor.Test.csproj", "{43AB8F88-6B2F-4913-9975-4FC9CAF12049}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Encryptor.Presentation", "Encryptor.Presentation\Encryptor.Presentation.csproj", "{1E52387A-C469-4BA7-9DEA-B5E9B8E1800A}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Encryptor.FileOperator", "Encryptor.FileOperator2\Encryptor.FileOperator.csproj", "{6DEBD12C-018A-4912-B9A3-522AB3A4BDFE}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{C4E592D9-64B3-4182-946E-A76A6EDCA0F1}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C4E592D9-64B3-4182-946E-A76A6EDCA0F1}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C4E592D9-64B3-4182-946E-A76A6EDCA0F1}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C4E592D9-64B3-4182-946E-A76A6EDCA0F1}.Release|Any CPU.Build.0 = Release|Any CPU
+		{43AB8F88-6B2F-4913-9975-4FC9CAF12049}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{43AB8F88-6B2F-4913-9975-4FC9CAF12049}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{43AB8F88-6B2F-4913-9975-4FC9CAF12049}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{43AB8F88-6B2F-4913-9975-4FC9CAF12049}.Release|Any CPU.Build.0 = Release|Any CPU
+		{1E52387A-C469-4BA7-9DEA-B5E9B8E1800A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{1E52387A-C469-4BA7-9DEA-B5E9B8E1800A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{1E52387A-C469-4BA7-9DEA-B5E9B8E1800A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{1E52387A-C469-4BA7-9DEA-B5E9B8E1800A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{6DEBD12C-018A-4912-B9A3-522AB3A4BDFE}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{6DEBD12C-018A-4912-B9A3-522AB3A4BDFE}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{6DEBD12C-018A-4912-B9A3-522AB3A4BDFE}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{6DEBD12C-018A-4912-B9A3-522AB3A4BDFE}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(TeamFoundationVersionControl) = preSolution
+		SccNumberOfProjects = 5
+		SccEnterpriseProvider = {4CA58AB2-18FA-4F8D-95D4-32DDF27D184C}
+		SccTeamFoundationServer = https://spielwiese.visualstudio.com/defaultcollection
+		SccLocalPath0 = .
+		SccProjectUniqueName1 = Encryptor.Test\\Encryptor.Test.csproj
+		SccProjectName1 = Encryptor.Test
+		SccLocalPath1 = Encryptor.Test
+		SccProjectUniqueName2 = Encryptor.Presentation\\Encryptor.Presentation.csproj
+		SccProjectName2 = Encryptor.Presentation
+		SccLocalPath2 = Encryptor.Presentation
+		SccProjectUniqueName3 = Encryptor\\Encryptor.Engine.csproj
+		SccProjectName3 = Encryptor
+		SccLocalPath3 = Encryptor
+		SccProjectUniqueName4 = Encryptor.FileOperator2\\Encryptor.FileOperator.csproj
+		SccProjectName4 = Encryptor.FileOperator2
+		SccLocalPath4 = Encryptor.FileOperator2
+	EndGlobalSection
+EndGlobal
