@@ -72,7 +72,13 @@
     <GenerateManifests>true</GenerateManifests>
   </PropertyGroup>
   <PropertyGroup>
-    <SignManifests>true</SignManifests>
+    <SignManifests>false</SignManifests>
+  </PropertyGroup>
+  <PropertyGroup>
+    <TargetZone>LocalIntranet</TargetZone>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ApplicationManifest>Properties\app.manifest</ApplicationManifest>
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="GalaSoft.MvvmLight, Version=5.2.0.37222, Culture=neutral, PublicKeyToken=e7570ab207bcb616, processorArchitecture=MSIL">
@@ -170,6 +176,7 @@
     </EmbeddedResource>
     <None Include="Encryptor.Presentation_TemporaryKey.pfx" />
     <None Include="packages.config" />
+    <None Include="Properties\app.manifest" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
@@ -203,7 +210,7 @@
     </FileAssociation>
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\Encryptor.FileOperator2\Encryptor.FileOperator.csproj">
+    <ProjectReference Include="..\Encryptor.FileOperator\Encryptor.FileOperator.csproj">
       <Project>{6debd12c-018a-4912-b9a3-522ab3a4bdfe}</Project>
       <Name>Encryptor.FileOperator</Name>
     </ProjectReference>
