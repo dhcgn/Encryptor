@@ -21,7 +21,6 @@ namespace Encryptor.Engine
                 Mode = CipherMode.CBC
             };
 
-
             Console.Out.WriteLine("EnC, Key: " + BitConverter.ToString(key) + ", IV: " + BitConverter.ToString(iv));
 
             using (var stream = new MemoryStream())

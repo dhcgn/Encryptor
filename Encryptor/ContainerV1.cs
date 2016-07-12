@@ -6,6 +6,11 @@ namespace Encryptor.Engine
 {
     public class ContainerV1
     {
+        private const int MagicBytesLength = 8;
+        private const int VersionLength = 4;
+        private const int HmacLength = 64;
+        private const int IVLength = 16;
+
         public static int ContainerVersion => 1;
 
         public byte[] Data { get; }
@@ -51,17 +56,17 @@ namespace Encryptor.Engine
 
         public static ContainerV1 FromBytes(byte[] bytes)
         {
-            var magicBytes = bytes.Skip(0).Take(8).ToArray();
+            var magicBytes = bytes.Skip(0).Take(MagicBytesLength).ToArray();
             if (!Config.MagicBytes.SequenceEqual(magicBytes))
                 throw new Exception("MagicNumber is wrong.");
 
-            var version = BitConverter.ToInt32(bytes.Skip(8).Take(4).ToArray(), 0);
+            var version = BitConverter.ToInt32(bytes.Skip(MagicBytesLength).Take(VersionLength).ToArray(), 0);
             if (version != ContainerVersion)
                 throw new Exception("ContainerVersion is wrong.");
 
-            var hmac = bytes.Skip(8 + 4).Take(64).ToArray();
-            var iv = bytes.Skip(8 + 4 + 64).Take(16).ToArray();
-            var data = bytes.Skip(8 + 4 + 64 + 16).ToArray();
+            var hmac = bytes.Skip(MagicBytesLength + VersionLength).Take(HmacLength).ToArray();
+            var iv = bytes.Skip(MagicBytesLength + VersionLength + HmacLength).Take(IVLength).ToArray();
+            var data = bytes.Skip(MagicBytesLength + VersionLength + HmacLength + IVLength).ToArray();
             var result = new ContainerV1(iv, data, hmac);
 
             return result;
