@@ -3,14 +3,15 @@ using System.IO;
 using System.Linq;
 using System.Reflection;
 using Encryptor.Engine;
-using Microsoft.VisualStudio.TestTools.UnitTesting;
+using NUnit.Framework;
+using NUnit.Framework.Internal;
 
 namespace Encryptor.Test
 {
-    [TestClass]
+    [TestFixture]
     public class UnitTest1
     {
-        [TestMethod]
+        [Test]
         public void EncryptDecrypt_Sucess()
         {
             var filepath = WriteTestFileToRandomLocation("Picture.jpg");
@@ -28,7 +29,7 @@ namespace Encryptor.Test
             Assert.IsTrue(File.ReadAllBytes(filepath).SequenceEqual(File.ReadAllBytes(decrypt)));
         }
 
-        [TestMethod]
+        [Test]
         public void EncryptDecrypt_HideFilename_Sucess()
         {
             var filepath = WriteTestFileToRandomLocation("Picture.jpg");
@@ -52,7 +53,7 @@ namespace Encryptor.Test
         }
 
 
-        [TestMethod]
+        [Test]
         public void Encrypt_Sucess()
         {
             var filepath = WriteTestFileToRandomLocation("Picture.jpg");
@@ -63,29 +64,29 @@ namespace Encryptor.Test
             Assert.IsTrue(Engine.Encryptor.IsEncryptorFile(encryptedFile), "Is this a EncryptorFile");
         }
 
-        [TestMethod]
-        [ExpectedException(typeof (EncryptorTampertOrWrongPassphraseException))]
+        [Test]
         public void Decrypt_Tampert_Fail()
         {
             var filepath = WriteTestFileToRandomLocation("Picture.jpg.enc.tampert");
 
-            var decrypt = Engine.Encryptor.Decrypt(filepath, "qwert");
-
-            Assert.Fail();
+            Assert.Throws<EncryptorTampertOrWrongPassphraseException>(() =>
+            {
+                var decrypt = Engine.Encryptor.Decrypt(filepath, "qwert");
+            });
         }
 
-        [TestMethod]
-        [ExpectedException(typeof (EncryptorTampertOrWrongPassphraseException))]
+        [Test]
         public void Decrypt_WrongPassword_Fail()
         {
             var filepath = WriteTestFileToRandomLocation("Picture.jpg.enc");
 
-            var decrypt = Engine.Encryptor.Decrypt(filepath, ".......");
-
-            Assert.Fail();
+            Assert.Throws<EncryptorTampertOrWrongPassphraseException>(() =>
+            {
+                var decrypt = Engine.Encryptor.Decrypt(filepath, ".......");
+            });
         }
 
-        [TestMethod]
+        [Test]
         public void IsEncryptorFile_Sucess()
         {
             var filepath = WriteTestFileToRandomLocation("Picture.jpg.enc");
@@ -95,7 +96,7 @@ namespace Encryptor.Test
             Assert.IsTrue(decrypt, "Is this a EncryptorFile");
         }
 
-        [TestMethod]
+        [Test]
         public void IsEncryptorFile_Fail()
         {
             var filepath = WriteTestFileToRandomLocation("Picture.jpg");
