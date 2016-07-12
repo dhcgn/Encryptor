@@ -139,10 +139,11 @@ namespace Encryptor.Engine
             var plainContent = PlainContent.FromBytes(decryptedBytes);
 
             SetStatusDecryption(statusCallback, Status.WriteAllBytes);
-            File.WriteAllBytes(Path.Combine(Path.GetDirectoryName(path),plainContent.Filename), plainContent.Data);
+            var fullpath = Path.Combine(Path.GetDirectoryName(path),plainContent.Filename);
+            File.WriteAllBytes(fullpath, plainContent.Data);
 
             SetStatusDecryption(statusCallback, Status.Done);
-            return plainContent.Filename;
+            return fullpath;
         }
 
         public static bool IsEncryptorFile(string path)

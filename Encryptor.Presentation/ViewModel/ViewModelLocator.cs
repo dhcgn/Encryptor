@@ -46,13 +46,8 @@ namespace Encryptor.Presentation.ViewModel
         }
 
 
-        public MainViewModel MainViewModel
-        {
-            get
-            {
-                return ServiceLocator.Current.GetInstance<MainViewModel>();
-            }
-        }
+        public MainViewModel MainViewModel => ServiceLocator.Current.GetInstance<MainViewModel>();
+
         public MyPasswordBox.MyPasswordBoxViewModel PasswordBoxViewModelDesignTime 
             => new MyPasswordBox.MyPasswordBoxViewModel();
 

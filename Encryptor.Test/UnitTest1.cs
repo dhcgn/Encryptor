@@ -47,7 +47,6 @@ namespace Encryptor.Test
             var decryptedFileName = Engine.Encryptor.Decrypt(encryptedFilename, "qwert");
 
             Assert.IsTrue(File.Exists(decryptedFileName), "Does file exists.");
-            Assert.AreEqual(decryptedFileName, Path.GetFileName(filepath));
 
             Assert.IsTrue(File.ReadAllBytes(filepath).SequenceEqual(File.ReadAllBytes(decryptedFileName)));
         }
