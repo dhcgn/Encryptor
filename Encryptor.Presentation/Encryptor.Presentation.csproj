@@ -229,7 +229,7 @@
   <Target Name="AfterBuild">
   </Target>
   -->
-  <Target Name="AfterResolveReferences">
+  <!--<Target Name="AfterResolveReferences" Condition="">
     <ItemGroup>
       <EmbeddedResource Include="@(ReferenceCopyLocalPaths)" Condition="'%(ReferenceCopyLocalPaths.Extension)' == '.dll'">
         <LogicalName>%(ReferenceCopyLocalPaths.DestinationSubDirectory)%(ReferenceCopyLocalPaths.Filename)%(ReferenceCopyLocalPaths.Extension)</LogicalName>
@@ -243,5 +243,5 @@
       <FilesToDelete Include="$(TargetDir)\*.dll" Exclude="$(TargetDir)\$(TargetName).dll" />
     </ItemGroup>
     <Delete Files="@(FilesToDelete)" />
-  </Target>
+  </Target>-->
 </Project>
