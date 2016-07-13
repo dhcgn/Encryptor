@@ -3,4 +3,4 @@ solution: Encryptor.sln
 install:
   - nuget restore Encryptor.sln
 script:
-  - xbuild /p:Configuration=Release Encryptor\Encryptor.Engine.csproj
+  - xbuild /p:Configuration=Release Encryptor/Encryptor.Engine.csproj
